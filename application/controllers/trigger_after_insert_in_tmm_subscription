@@ -1,0 +1,54 @@
+DELIMITER $$
+
+CREATE TRIGGER after_insert_tmm_subscription
+AFTER INSERT ON tbl_tmm_subscription 
+FOR EACH ROW
+BEGIN
+   
+  INSERT INTO tbl_tmm_subscription_update_logs 
+  (ID, PlayerID, vMSISDN, vLink, vOperator, vService, vPlanID, vTName, vPName, 
+  vPrice, vValidity, vLastStatus, vStatus, iFailCount, vState, vHandset, vMode, 
+  TransactionID, dCreatedOn, dUpdatedOn, dValidFrom, dValidTill, PublishaerID, ActivationCode, 
+  ProductID, OPXUserID, OPXSubscriptionID, OPXTransactionID, EndDate, BillingStartDate, NextBillingDate, UTMSource
+  
+  ) 
+  VALUES 
+  (new.ID, new.PlayerID,  new.vMSISDN,  new.vLink,  new.vOperator,  new.vService,  new.vPlanID,  new.vTName,  new.vPName,  
+  new.vPrice,  new.vValidity,  new.vLastStatus,  new.vStatus,  new.iFailCount,  new.vState,  new.vHandset,  new.vMode, 
+  new.TransactionID,  new.dCreatedOn,  new.dUpdatedOn,  new.dValidFrom,  new.dValidTill,  new.PublishaerID,  new.ActivationCode,  
+  new.ProductID, new.OPXUserID, new.OPXSubscriptionID, new.OPXTransactionID, new.EndDate, new.BillingStartDate, new.NextBillingDate, new.UTMSource
+  );
+
+END $$
+
+DELIMITER ;
+
+
+---------------------------------------------------------------
+
+
+
+DELIMITER $$
+
+CREATE TRIGGER before_update_tmm_subscription
+BEFORE UPDATE ON tbl_tmm_subscription 
+FOR EACH ROW
+BEGIN
+   
+  INSERT INTO tbl_tmm_subscription_update_logs 
+  (ID, PlayerID, vMSISDN, vLink, vOperator, vService, vPlanID, vTName, vPName, 
+  vPrice, vValidity, vLastStatus, vStatus, iFailCount, vState, vHandset, vMode, 
+  TransactionID, dCreatedOn, dUpdatedOn, dValidFrom, dValidTill, PublishaerID, ActivationCode, 
+  ProductID, OPXUserID, OPXSubscriptionID, OPXTransactionID, EndDate, BillingStartDate, NextBillingDate, UTMSource
+  
+  ) 
+  VALUES 
+  (new.ID, new.PlayerID,  new.vMSISDN,  new.vLink,  new.vOperator,  new.vService,  new.vPlanID,  new.vTName,  new.vPName,  
+  new.vPrice,  new.vValidity,  new.vLastStatus,  new.vStatus,  new.iFailCount,  new.vState,  new.vHandset,  new.vMode, 
+  new.TransactionID,  new.dCreatedOn,  new.dUpdatedOn,  new.dValidFrom,  new.dValidTill,  new.PublishaerID,  new.ActivationCode,  
+  new.ProductID, new.OPXUserID, new.OPXSubscriptionID, new.OPXTransactionID, new.EndDate, new.BillingStartDate, new.NextBillingDate, new.UTMSource
+  );
+
+END $$
+
+DELIMITER ;

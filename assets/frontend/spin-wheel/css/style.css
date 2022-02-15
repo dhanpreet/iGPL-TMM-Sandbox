@@ -1,0 +1,166 @@
+
+
+body {
+	max-width:600px !important;
+	margin:0 auto; 
+	background:  url(home-bg.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+} 
+
+@keyframes fadeFromBottom  {
+	0%{
+		opacity:0.5;
+		-webkit-transform: translateY(100%);
+		-moz-transform: translateY(100%);
+		-ms-transform: translateY(100%);
+		-o-transform: translateY(100%);
+		transform: translateY(100%);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		-ms-transform: translateY(0px);
+		-o-transform: translateY(0px);
+		transform: translateY(0px);
+		display: block;
+	}
+}
+
+
+.wheelContainer{
+
+  position:absolute;
+  width:100%;
+  height:100%;
+  max-width:600px;
+  margin:0 auto; 
+  transform: translate(-50%, -50%) ; 
+  
+	animation: fadeFromBottom ease 2s; 
+	animation-iteration-count: 1; 
+	animation-fill-mode: forwards; 
+	
+}
+
+
+.wheelSVG{
+  position:absolute;
+  width:100%;
+  height:100%;
+  visibility:hidden;
+  overflow:visible;
+  
+}
+.peg{
+  visibility:hidden;
+}
+.wheelOutline, .valueContainer, .toast, .centerCircle{
+  pointer-events:none;
+}
+
+.wheelText{
+  pointer-events:none;
+  /* font-size:28px; */
+  /* fill:red; */
+  text-anchor:middle;
+  font-family:'Fjalla One', Arial, sans-serif;
+  -webkit-user-select: none;
+  user-select:none;
+}
+
+.toast {
+  position:absolute;
+  background-color:#E81D62;
+  border-radius:12px;
+  opacity:0;
+  text-align:center;
+}
+.toast p{
+  clear: both;
+  font-family:'Fjalla One', Arial, sand-serif;
+  margin:23px;
+  font-size:30px;
+  color:#ededed;
+  letter-spacing:-0px;
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none; 
+  -khtml-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;     
+  user-select: none;  
+  line-height:32px;
+  -webkit-transition: font-size .2s ease;
+  transition: font-size .2s ease; 
+  -webkit-transition: line-height .2s ease;
+  transition: line-height .2s ease; 
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-width : 480px) {
+  .toast p, .toast span{
+    font-size:18px;
+    line-height:18px;
+  }
+}
+@media only screen and (min-width : 481px) and (max-width : 800px) {
+  .toast p, .toast span{
+    font-size:38px;
+    line-height:38px;
+  }
+}
+
+@media only screen and (min-width : 801px)  {
+  .toast p, .toast span{
+    font-size:58px;
+    line-height:60px;
+  }
+}
+
+
+@media only screen and (max-height : 480px) {
+  .toast p, .toast span{
+    font-size:33px;
+    line-height:35px;
+  }
+}
+
+
+.btnDiv{
+	margin:0 auto;
+	text-align:center;
+	position:absolute;
+	bottom:10% !important;
+	left:10%;
+	right:10%;
+}
+
+.btn{
+	font-family:'Fjalla One', Arial, sand-serif;	
+	position:relative;
+	width:150px;
+	height:50px;
+	background: #ff648c;	
+	border-radius:5px;
+	color:#fff;
+	font-size:1.1em;
+	text-align:center;
+	border:none;
+	padding:5px;
+	text-transform:uppercase;
+	cursor:pointer;
+	 box-shadow:
+		  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+		  0 12.5px 10px rgba(0, 0, 0, 0.06),
+		  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+		  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		  0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+
+

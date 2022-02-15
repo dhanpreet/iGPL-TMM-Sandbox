@@ -1,0 +1,1218 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body
+{
+	background: rgb(18,18,18) !important;
+	max-width: 600px !important;
+	margin:auto !important;
+	color: rgb(255,255,255)!important;
+	font-family: 'Mulish', sans-serif !important;
+}
+
+
+
+ .max-600
+ {
+ 	max-width:600px;
+ 	margin: auto !important;
+ } 
+ 
+ 
+
+a:focus, a:hover, a {
+    color: rgb(47,163,224) !important;
+    text-decoration: none;
+}
+.white
+{
+	color: #fff !important;
+}
+.shades
+{
+	background-image: url("../img/Fixed-Gradient Background.jpg");
+    min-height: 200px;
+    max-width: 600px;
+    margin: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+.modal-dialog {
+    max-width: 600px;
+}
+.modal-header
+{
+	background-image: url("../img/Fixed-Gradient-Background.jpg");
+	background-size: cover;
+    max-height: 96px;
+        border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.modal-container
+{
+	 margin: 0px 10px !important;
+    display: grid;
+}
+.modal-header > img {
+    position: relative;
+    top: -60px;
+}
+.modal-title
+{
+	font-size: 18px;
+   font-family: 'Mulish', sans-serif !important;
+    color: #000;
+    padding: 20px;
+
+}
+.modal-btns .buy-coins
+{
+	background: rgb(47,163,224);
+    color: #fff;
+    border-radius: 4px;
+    border: 0px;
+    padding: 10px;
+    margin: 10px 0px;
+    font-size: 16px;
+     font-family: 'Mulish', sans-serif !important;
+    width: 100%;
+}
+.modal-btns .earn-coins
+{
+	background: transparent;
+    color: rgb(47,163,224);
+    border-radius: 4px;
+    border: 0px;
+    padding: 10px;
+    margin: 10px 0px;
+    font-size: 16px;
+     font-family: 'Mulish', sans-serif !important;
+    border:1px solid rgb(47,163,224);
+    width: 100%;
+}
+.block
+{
+	display: block;
+}
+.relative
+{
+	position: relative;
+}
+.verticle-aligned
+{
+	position: absolute !important;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) !important;
+	text-align: center;
+}
+.top-aligned
+{
+	
+    position: absolute;
+    top: 4px;
+    text-align: center;
+    width: 100%;
+
+}
+.avatar-player-name > p
+{
+		font-size: 24px;
+		margin-bottom:0px 
+}
+.avatar-player-name > p > span
+{
+		display: block
+}
+.avatar-player-name > input, .avatar-player-name button
+{
+	width: 90%;
+	margin:auto;
+	margin-top:32px; 
+	font-size: 16px !important;
+	padding: 10px;
+}
+.avatar-player-name input.form-control {
+    border: 0px;
+    border-radius: 2px !important; 
+}
+.avatar-player-name button{
+	color: #fff;
+	outline: none;
+}
+.animation-character > p
+{
+		font-size: 24px;
+		margin-bottom:0px 
+}
+.animation-character > p > span
+{
+		display: block
+}
+.animation-character > input, .animation-character button
+{
+	width: 90%;
+	margin:auto;
+	margin-top:32px; 
+}
+.animation-character button
+{
+	color: #fff;
+	outline: none;
+}
+.avatar-player-name > div.relative > span > i
+{
+	padding:4px;
+	border-radius: 50%;
+	background: rgb(47,163,224);
+	position: absolute;
+    right: 6px;
+    bottom: 0px;
+    border: 3px solid;
+}
+.avatar-player-name > div.img-icon
+{
+	width: 100px;
+	height: 100px;
+	margin:auto; 
+}
+.form-control
+{
+	border-radius: 0px !important;
+	font-size: 16px !important;
+	padding: 22px 12px !important;
+	font-size: 16px !important;
+}
+.btn-main
+{
+	background: rgb(47,163,224);
+    color: #fff !important;
+    width: 100%;
+    font-size: 16px !important;
+    padding: 10px !important;
+     font-family: 'Mulish', sans-serif !important;
+}
+.section-name-title
+{
+	font-size: 24px;
+}
+.font-16
+{
+	font-size: 16px !important;
+}
+.width-100
+{
+	width: 100%;
+}
+.character-amin {
+            
+            animation: character_animation 2s infinite ease-in-out !important;
+           transform: scale(0.96,0.96);
+        }
+@keyframes character_animation {
+            40% {
+                
+                transform: scale(1.0,1.0);
+            }
+        }
+
+.header-strip {
+    background: #fff;
+    padding: 10px;
+    position: relative;
+}
+.header-strip .center {
+	position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    color: rgb(47,51,52);
+   font-family: 'Mulish', sans-serif !important;
+}
+.header-strip span a
+{
+	color: rgb(47,163,224) !important;
+}
+.touraments-profile
+{
+	margin: 10px;
+}
+.padd
+{
+	margin:0px !important;
+	padding:0px !important;
+}
+.transperent-strip{
+	display: flow-root;
+}
+.avatar-icon > img {
+    margin: 4px;
+}
+.avatar-icon > .avatar-name
+{
+	font-family: 'Mulish', sans-serif !important;
+	font-size: 16px;
+}
+.text-light
+{
+	color: rgb(137,139,140);
+	font-size: 14px;
+	display: block;
+}
+.text-light-12
+{
+	color: rgb(137,139,140);
+	font-size: 12px;
+	display: block;
+}
+.text-light-10
+{
+	color: rgb(137,139,140);
+	font-size: 10px;
+	display: block;
+	padding-top: 4px;
+}
+.text-dark
+{
+	color: #fff;
+	font-size: 24px;
+	display: block;
+
+	font-family: 'Mulish', sans-serif !important;
+}
+.nav-tabs
+{
+	border:0 !important;  
+}
+.nav-tabs>li>a
+{
+	color: rgb(137,139,140) !important;
+	font-size: 16px;
+	  font-family: 'Mulish', sans-serif !important;
+}
+.nav-tabs>li.active>a
+{
+	color: rgb(133,193,51) !important;
+	background:transparent !important;
+	border: 0 !important;
+	border-bottom: 3px solid rgb(133,193,51) !important;
+	font-family: 'Mulish', sans-serif !important;
+}
+.home-practice > li {
+    width: 50%;
+    text-align: center;
+}
+.content-tab-heading
+{
+	color: #fff;
+	font-size: 18px;
+	font-family: 'Mulish', sans-serif !important;
+	text-align: center;
+	display: block;
+	margin-top: 16px;
+}
+.image-responsive
+{
+	width: 100%;
+}
+
+.overlay
+{
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: .5s ease;
+    background: linear-gradient(to top,#121212,#3f27c300);
+}
+.tab-main-content span.live
+{
+	position: absolute;
+	top: 14px;
+	left: 14px;
+}
+.tab-main-content div.content-text
+{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	padding: 10px;
+}
+.content-text span.title
+{
+	font-size: 16px;
+	font-family: 'Mulish', sans-serif !important;
+}
+.content-text .arcade
+{
+	padding-bottom: 12px;
+}
+.calendar > span, .rewards > span
+{
+	font-size: 14px;
+	padding-left: 2px;
+}
+.calendar > img, .rewards > img
+{
+	position: relative;;
+	top: -2px;
+}
+.calendar, .rewards
+{
+	padding: 3px 0px;
+}
+
+.spin-wheel
+{
+	padding-right: 4px;
+}
+.spin-win
+{
+	font-size: 16px;
+}
+.tournament-bottom 
+{
+	background: #22282e;
+	padding: 0px 10px !important; 
+	border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.tournament-bottom > div.play-btn, .tournament-bottom > div.enrty-fee
+{
+	margin:15px 0px;
+}
+.tournament-bottom > div.enrty-fee > img
+{
+	padding-right: 4px;
+}
+.tab-main-content > .col-xs-12.padd.relative
+{
+	margin-top:10px;
+}
+.game-section
+{
+	margin-top: 14px !important;
+}
+.col-xs-12.game-section > div.relative > img {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.nav>li>a:focus, .nav>li>a:hover
+{
+	background: transparent !important;
+	border: 0 !important;
+	border-bottom: 3px solid rgb(133,193,51) !important;
+}
+.gaming-section-header-strip
+{
+	margin-top: 10px !important;
+	padding: 0px 4px !important;
+}
+.gaming-section-header-strip > span
+{
+	padding: 10px 0px;
+	font-size: 16px;
+	  font-family: 'Mulish', sans-serif !important;
+}
+.view-all .gaming-section-header-strip > span.pull-left
+{
+	padding: 0px 0px;
+	font-size: 24px !important;
+	font-family: 'Mulish', sans-serif !important;
+}
+.view-all > div.col-xs-12.padd
+{
+	margin: 0px 6px !important;
+}
+.game-thumbs > div.col-xs-4 > span
+{
+	background: rgb(34,40,46);
+	padding:10px 0px;
+	text-align: center;
+	display: block;
+	font-size: 14px; 
+	  font-family: 'Mulish', sans-serif !important;
+	color: #fff;
+	 border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.game-thumbs > div.col-xs-4
+{
+	padding: 6px !important; 
+}
+.game-thumbs > div.col-xs-4 > img
+{
+	 border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#practice-zone
+{
+	margin: 0px 6px !important; 
+}
+.main-container
+{
+	margin: 0px 10px !important;
+	padding-top: 20px;
+	display: grid;		
+}
+.align-middle
+{
+	display: flex;
+  align-items: center;
+  /*  justify-content: center;  */
+  flex-direction: row;
+}
+.user-name-details > .name
+{
+	font-size: 16px;
+	padding-left: 26px;
+	font-family: 'Mulish', sans-serif !important;
+}
+.user-name-details > .number
+{
+	font-size: 16px;
+	padding-left: 26px;
+	font-family: 'Mulish', sans-serif !important;
+}
+span.user-profile > img:first-child 
+{
+    border: 4px solid;
+    border-radius: 50%;
+}
+span.user-profile > img:nth-child(2)
+{
+	    position: absolute;
+    bottom: 5px;
+    right: 0;
+    background: #fff;
+    border-radius: 50%;
+    padding: 0px;
+}
+.profile-section
+{
+	background: rgb(34,40,46);
+	margin-top: 16px;
+	display: flow-root;
+	border-radius: 5px;
+}
+.profile-section > span
+{
+	padding: 26px 18px; 
+	font-size: 16px;
+}
+.profile-section > span.pull-left
+{
+	padding: 26px 18px; 
+	font-size: 16px;
+	  font-family: 'Mulish', sans-serif !important;
+}
+.profile-section > span.pull-left > img
+{
+	padding-right: 10px;
+}
+.profile-section > span.pull-right
+{
+	margin: 5px 0px;
+}
+.col-xs-12.tournament-section.padd {
+    background: rgb(34,40,46);
+    padding: 18px 12px !important;
+    margin-top: 16px !important;
+    border-radius: 5px;
+}
+.my-tournament-details > .tournament-name
+{
+	font-size: 14px;
+	font-family: 'Mulish', sans-serif !important;
+}
+.my-tournament-details
+{
+	padding-left: 14px !important; 
+}
+.tournament-date-time
+{
+	font-size: 12px;
+	display: block;
+	padding-top: 6px;
+}
+.tournament-date-time > img
+{
+	position: relative;
+	top: -2px;
+	margin-right: 8px;
+}
+.tournament-rank-reward {
+    display: block;
+    margin-top: 12px;
+}
+.tournament-rank-reward .subtitle
+{
+	font-size: 12px;
+	font-family: 'Mulish', sans-serif !important;
+	color: rgb(109,107,107);
+}
+.tournament-rank-reward span.block
+{
+	font-size: 12px;
+}
+.tournament-rank-reward span.block > img
+{
+	margin-right: 5px;
+}
+.tournament-thumb > img
+{
+	padding: 4px !important;
+	border-radius: 5px;
+}
+.details-img
+{
+	position: relative;
+}
+.details-game-strip
+{
+	
+	position: absolute;
+	top: 0;
+	width: 100%;
+	padding:10px; 
+}
+.detail-game-content > .details-name
+{
+	font-size: 24px;
+	font-family: 'Mulish', sans-serif !important;
+}
+.detail-game-content > .details-arcade
+{
+	display: block;
+	font-size: 16px !important;
+}
+.detail-game-content {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 10px;
+}
+
+.tournament-start-in
+{
+	font-size: 14px;
+     font-family: 'Mulish', sans-serif !important;
+    text-align: center;
+    display: block;
+}
+.tournament-duaration > div.col-xs-3
+{
+	margin-top:10px;
+	padding: 4px 0px;
+	text-align: center; 
+	border-right: 1px solid rgb(112,112,112);
+}
+.tournament-duaration > div.col-xs-3:last-child
+{
+	border-right: 1px solid transparent;
+}
+.tournament-duaration > div.col-xs-3 > span.text-light
+{
+	font-size: 10px !important;
+}
+.detail-btns
+{
+	margin: 20px 0px;
+}
+.detail-btns > div.practive > span
+{
+	font-size: 16px;
+	border: 1px solid #ff648c ;
+	padding: 10px;
+	border-radius: 4px;
+	color: #ff648c  !important;
+	text-align: center;
+	display: block;
+}
+.detail-btns > div.play-tournament > span
+{
+	font-size: 16px;
+	padding: 10px;
+	border-radius: 4px;
+	color: #fff !important;
+	border: 1px solid #ff648c ;
+	background: #ff648c ;
+	text-align: center;
+	display: block;
+}
+.detail-rewards
+{
+	border-bottom: 0.5px solid rgba(80,84,88,0.48);
+	padding: 14px 0px !important;
+}
+.detail-btns > div.practive{
+	padding-left: 0px;
+	padding-right: 6px;
+}
+.detail-btns > div.play-tournament{
+	padding-right: 0px;
+	padding-left: 6px;
+}
+.reward-coins > span
+{
+	font-family: 'Mulish', sans-serif !important;
+	font-size: 18px;
+}
+.detail-rewards > div.col-xs-3 span.text-light
+{
+	font-size: 10px;
+	padding-top: 4px;
+}
+.detail-rewards > div.col-xs-9 > span.bold
+{
+	font-family: 'Mulish', sans-serif !important;
+	display: block
+}
+.detail-rewards > div.col-xs-9 > a
+{
+	font-size: 16px !important 
+}
+.reward-ranking > table.table
+{
+	margin-top: 14px;
+
+}
+.how-to-play > a
+{
+	font-size: 16px;
+	  font-family: 'Mulish', sans-serif !important;
+	color: #fff !important;
+}
+.reward-ranking > table.table tr > th {
+    font-size: 18px;
+   font-family: 'Mulish', sans-serif !important;
+    background: rgb(34,40,46);
+    color: #fff;
+    border:none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 14px;
+    vertical-align: middle !important; 
+}
+.reward-ranking > table.table tr > td {
+    
+    background: rgb(58,63,68);
+    color: #fff;
+    border:none;
+    padding: 14px;
+    vertical-align: middle !important; 
+      font-family: 'Mulish', sans-serif !important;
+}
+.reward-ranking > table.table tr > td:first-child {
+    text-align: left;
+    font-size: 14px !important;
+}
+.reward-ranking > table.table tr > td:nth-child(2) {
+    text-align: right;
+    font-size: 16px;
+}
+.reward-ranking > table.table tr
+{
+	border-bottom:1px solid rgb(80,84,88);
+	background: rgb(58 63 68);
+}
+.reward-ranking > table.table tr:last-child {
+   border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom: 0px solid;
+}
+.reward-ranking > table.table tr:last-child > td:first-child
+{
+	border-bottom-left-radius: 8px
+}
+.reward-ranking > table.table tr:last-child > td:nth-child(2)
+{
+	border-bottom-right-radius: 8px
+}
+.first-rank > div.col-xs-4
+{
+	border-right: 2px solid #fff;
+}
+.first-rank
+{
+	background:#22282e;
+	padding: 10px !important;
+	border-radius: 5px;
+}
+.first-rank > div.col-xs-8 span.text-dark
+{
+	font-size: 32px;
+} 
+.col-xs-12.align-middle.padd.first-rank > div.col-xs-4 > span
+{
+	font-size: 1.05em;
+	  font-family: 'Mulish', sans-serif !important;
+}
+.rank-table > table
+{
+	/*margin-top: 20px;*/
+	
+	border: none;
+	/*border-radius: 8px;
+	background: #22282e;*/
+}
+.rank-table > table tr
+{
+	background: #22282e;
+	    position: relative !important;
+    top: -16px;
+}
+.rank-table > table tr:last-child > td:first-child
+{
+	border-bottom-left-radius: 8px;
+}
+.rank-table > table tr:last-child > td:last-child
+{
+	border-bottom-right-radius: 8px;
+}
+.rank-table > table tr:nth-child(2) > td:first-child
+{
+	border-top-left-radius: 8px;
+}
+.rank-table > table tr:nth-child(2) > td:last-child
+{
+	border-top-right-radius: 8px;
+}
+.rank-table > table td, .rank-table > table th
+{
+	border:0px !important;
+	vertical-align: middle !important; 
+	padding:10px !important; 
+}
+.rank-table > table th {
+    background: #121212;
+}
+.rank-table > table td:not(:first-child), .rank-table > table th:not(:first-child)
+{
+	text-align: center;
+}
+.rank-table > table td{
+	font-family: 'Mulish', sans-serif !important;
+}
+.rank-table > table td:last-child
+{
+	color: rgb(255,145,0);
+}.rank-table > table td:last-child
+{
+	/*  color: rgb(255,145,0);  */
+	 color: #fff !important; 
+}
+.rank-table > table th
+{
+	padding:0px 6px !important; 
+}
+.rank-table > table tr:first-child
+{
+	background: transparent;
+	    outline: 10px solid #121212;
+    outline-offset: -5px;
+        position: relative;
+    top: -36px;
+}
+/*.rank-table > table tr
+{
+	background: rgb(34,40,46);
+}*/
+.rank-table > table td > img
+{
+	/* padding-right: 10px;  */
+}
+.rank-table > table tr.active > td
+{
+	color: #000 !important;
+}
+.rank-table > table tr.active > td:last-child
+{
+	/* color: rgb(255,145,0) !important;  */
+	 color: #fff !important; 
+}
+.rank-table > table tr.active > td
+{
+	background: #ff648c  !important;
+	color: #fff !important;
+}
+.rank-table > table tr.active
+{
+    /*outline: 10px solid #22282e;
+    outline-offset: -10px;*/
+    background: #ff648c ;
+		color: #fff !important;
+}
+.col-xs-12.padd.rank-table {
+    padding: 5px !important;
+    background: #22282e;
+    margin-top: 60px !important;
+    border-radius: 8px;
+}
+.rank-table > table tr.active > td:first-child
+{
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+.rank-table > table tr.active > td:last-child
+{
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+.rank-table > table tr.active > td
+{
+   padding: 12px 18px !important;
+}
+.rank-table > table tr > td
+{
+   padding: 10px 18px !important;
+}
+.rank-table > table.table tr:nth-child(2) {
+   border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    
+}
+.modal-dialog
+{
+	margin: 0px !important;
+	width: 100% !important;
+}
+.modal-no-coin-bottom
+{
+	margin-top: 30px;
+}
+.modal-no-coin-bottom > p 
+{
+	font-size: 16px;
+	color: #000;
+	line-height: 24px;
+}
+.modal-no-coin-bottom > a
+{
+	font-size: 16px;
+	  font-family: 'Mulish', sans-serif !important;
+	padding-bottom: 30px !important;
+	display: block;
+}
+.buy-coins > p 
+{
+	font-size: 24px;
+}
+.buy-coins > p > span
+{
+	font-size: 16px;
+	display: block;
+	padding-top: 12px;
+}
+.buy-coins > input, .buy-coins button
+{
+	width: 90%;
+	margin:auto; 
+	font-size: 16px !important;
+	padding: 10px;
+}
+.buy-coins input.form-control {
+    border: 0px;
+    border-radius: 2px !important; 
+}
+.buy-coins button.btn-main{
+	color: #fff;
+	outline: none;
+	margin-top:50px;
+	  font-family: 'Mulish', sans-serif !important;
+}
+.buy-coins > a > button.buy-btn-cancel {
+    font-size: 16px !important;
+    background: transparent;
+    margin-top: 14px;
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    display: block;
+}
+.contrets > .modal-header > img
+{
+	top: -70px !important
+}
+.contrets > .modal-header > img.winn
+{
+	top: -50px !important
+}
+.contrets > .modal-body > .modal-title
+{
+	font-size: 20px;
+	  font-family: 'Mulish', sans-serif !important;
+}
+.contrets > .modal-body > .modal-middle > p
+{
+	color: #000;
+	font-size: 16px;
+}
+.contrets > .modal-body > .modal-middle > p.coins
+{
+	color: #000;
+	font-size: 20px;
+  font-family: 'Mulish', sans-serif !important;
+	padding:2px; 
+}
+.contrets > .modal-body > .modal-btns
+{
+	margin-top: 20px;
+}
+.exchange > .modal-header > img
+{
+	top: -70px !important
+}
+.exchange > .modal-body > .modal-title
+{
+	font-size: 20px;
+	  font-family: 'Mulish', sans-serif !important;
+	    width: 100%;
+}
+.coin-php
+{
+	    background: rgb(34,40,46);
+	    margin-top: 14px !important;
+	    border-radius: 4px;
+}
+.coin-php > div.col-xs-3
+{
+	background: rgb(59,64,69);
+	text-align: center;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	padding: 30px 0px;
+}
+.coin-php > div.col-xs-3 > img
+{
+	width: 50px;
+}
+.coin-php > div.col-xs-9
+{
+	background: rgb(34,40,46);
+
+}
+.coin-php > div.col-xs-9 > p
+{
+	margin:0px !important; 
+}
+.coin-php > div.col-xs-9 > p > span
+{
+	font-size: 16px;
+	font-family: 'Mulish', sans-serif !important;
+	color: rgb(47,163,224);
+	display: block;
+	 padding: 6px 0px;
+}
+.exchange span.heading
+{
+	font-size: 24px;
+}
+.exchange p
+{
+	width: 80%;
+	margin: auto;
+	line-height: 21px;
+	font-size: 14px;
+}
+.btn-minus, .btn-plus
+{
+	background: rgb(241,242,246);
+	color: #000;
+	height: 34px !important;
+	outline: none;
+	outline: none !important;
+}
+
+.btn-plus
+{
+	color:rgb(33,150,243);
+}
+.btn-minus
+{
+	color:#d55b69;
+}
+.exchange .form-control
+{
+	padding: 10px !important;
+	text-align: center;
+	border:0px; 
+}
+.exchange-number > div.col-xs-12 > .col-xs-6
+{
+	border:1px solid #fff;
+	border-radius: 8px;
+	padding: 0px;
+		margin: 6px;
+}
+span.number-top {
+    font-size: 16px;
+    background: rgb(34,40,46);
+    display: block;
+    padding:16px 6px; 
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-family: 'Mulish', sans-serif !important;
+}
+.exchange-number .input-group {
+    font-size: 16px;
+    background: rgb(59,64,69);
+    padding:16px; 
+    border-bottom: 1px solid;
+}
+span.number-bottom > span > img
+{
+	
+	position: relative;
+    margin-right: 8px;
+    top: -4px;
+}
+span.number-bottom .text-dark
+{
+	display: inline-block !important; 
+}
+span.number-bottom > span
+{
+	display: block;
+}
+span.number-bottom {
+    font-size: 16px;
+    background: rgb(34,40,46);
+    display: block;
+    padding:16px 6px; 
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.play-reward-coins
+{
+	margin-top: 20px !important;
+	display: inline-block;
+}
+.play-reward-coins img
+{
+	margin-right: 10px;
+}
+.play-reward-coins .equal
+{
+	padding:6px; 
+}
+.exchange-btn
+{
+	position: fixed;
+	bottom: 20px;
+	display: block;
+	left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 600px;
+    padding: 20px;
+}
+.exchange-confirm
+{
+	background: rgb(241,242,246);
+	display: flex;
+	padding-bottom: 12px;
+}
+.row.exchange-confirm.paymaya
+{
+	padding: 15px 10px !important;
+}
+.reward-confirm
+{
+	    background: rgb(34,40,46);
+    border: 2px solid #fff;
+    display: inline-block;
+    border-radius: 4px;
+}
+.exchange-confirm .text
+{
+	font-size: 16px;
+	color: rgb(47,51,52);
+	  font-family: 'Mulish', sans-serif !important;
+	text-align: center;
+	padding:10px 0px;
+	display: block; 
+}
+.exchange-confirm.paymaya .text
+{
+	font-size: 12px !important;
+	color: rgb(47,51,52);
+	  font-family: 'Mulish', sans-serif !important;
+	text-align: center;
+	padding:8px 0px;
+	display: block; 
+}
+.reward-confirm > img {
+    margin: 12px;
+    margin-bottom: 0px;
+}
+.exchange-confirm.paymaya div.reward-confirm > img {
+    margin: 12px 26px !important;
+    margin-bottom: 0px !important;
+}
+span.reward-amount
+{
+	font-size: 24px;
+	font-family: 'Mulish', sans-serif !important;
+	color: #fff;
+	margin-top: 0px;
+	margin:10px;
+	display: block; 
+}
+.reward-confirm.paymaya span.reward-amount {
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 4px;
+    font-family: 'Mulish', sans-serif !important;
+}
+.reward-confirm.paymaya span.php {
+    font-size: 12px;
+    font-family: 'Mulish', sans-serif !important;
+}
+.padd.for
+{
+	font-size: 24px;
+	font-family: 'Mulish', sans-serif !important;
+	color: rgb(34,40,46);
+
+}
+.modal-btns.exchange a
+{
+	font-size: 16px;
+	text-decoration: none;
+	  font-family: 'Mulish', sans-serif !important;
+}
+p.modal-title.exchange {
+    padding-top: 10px;
+      font-family: 'Mulish', sans-serif !important;
+    font-size: 20px;
+}
+.modal-title.exchange-congretz
+{
+	padding-bottom: 0px;
+}
+.exchange-congretz .reward-amount
+{
+	display: inline-block !important;
+}
+.exchange-congretz span.reward-amount
+{
+	color: rgb(47,51,52);
+	margin: 10px 0;
+	font-size: 20px;
+}
+.exchange-congretz > p 
+{
+	color: rgb(47,51,52); 
+}
