@@ -7,8 +7,6 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0">
-
-  <script></script>
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/frontend/css/bootstrap.min.css">
 	<script src="<?php echo base_url() ?>assets/frontend/js/jquery.min.js"></script>
 	<script src="<?php echo base_url() ?>assets/frontend/js/bootstrap.min.js"></script>
