@@ -800,6 +800,13 @@ class Site_model extends CI_Model {
 		return $this->db->get()->row_array();
 	}
 	
+	function getUserForGratification($id)
+	{
+		$this->db->select('*' , FALSE);
+		$this->db->from('tbl_talktime_gratification');
+		$this->db->where('tg_t_id' , $id);
+		return $this->db->get()->result_array();
+	}
 	
 	
 	
