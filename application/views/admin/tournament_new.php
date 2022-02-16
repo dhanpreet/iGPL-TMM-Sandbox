@@ -215,7 +215,7 @@
 											<div class="col-md-4">
 												<label for="tournament_reward_type_<?php echo $row['c_id']; ?>" class="col-md-12 col-form-label">Reward Type <span class="text-danger">*</span></label>
 												<div class="col-md-12">
-													<select class="form-control" name="tournament_reward_type[]" onclick="changeType(<?php echo $row['c_id']; ?>)" id="tournament_reward_type_<?php echo $row['c_id']; ?>" required >
+													<select class="form-control" name="tournament_reward_type[]"  id="tournament_reward_type_<?php echo $row['c_id']; ?>" required >
 															<option value="">Choose option</option>
 															<option value="1">Coins</option>
 															<option value="2">Data Pack</option>
@@ -455,10 +455,12 @@
 			})
 		</script>
 		<script>
-		function changeType(id)
-		{
-			$("#tournament_reward_type_"+id).change(function(){
+		// $('#tournament_reward_type_<?php echo $row['c_id']; ?>').change(function)
+		// {
+			$("#tournament_reward_type_<?php echo $row['c_id']; ?>").change(function(){
+				var id=<?php echo $row['c_id']; ?>;
 				var type = $(this).val();
+				// alert(type);
 				if(type== '1'){
 					$('.reward_type'+id).empty();
 					$('.reward_type'+id).append('Coins');
@@ -473,7 +475,7 @@
 					$('.reward_type'+id).append('Coins');
 				}
 			});
-		}
+		// }
 		</script>
 		<script>
 			/*$(document).ready(function()
