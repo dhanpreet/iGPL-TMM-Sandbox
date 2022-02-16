@@ -78,7 +78,7 @@ $db['default'] = array(
 	
 	'hostname' => '127.0.0.1',
 	'username' => 'root',
-	'password' => '',
+	'password' => 'mani@123',
 	'database' => 'tmm_sandbox_db',
 	
 	'dbdriver' => 'mysqli',
