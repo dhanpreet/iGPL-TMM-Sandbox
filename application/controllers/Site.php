@@ -3231,6 +3231,17 @@ public function liveTournamentsResults(){
 					}
 					if($list[0]['fee_tournament_rewards']==3)
 					{
+						$skuCode = $this->SITEDBAPI->getSkuCode();
+						if(!empty($skuCode))
+						{
+							$reward=[];
+							$sku=[];
+							foreach($skuCode as $row)
+							{
+								$reward[$row['tr_reward_amount']] = $row['tr_usd_amount'];
+								$sku[$row['tr_reward_amount']]	=	$row['tr_skuCode'];
+							}
+						}
 						$result = $this->generateTokenForGratification();
 						if($result)
 						{
@@ -3239,8 +3250,67 @@ public function liveTournamentsResults(){
 							{
 								foreach($allPlayer as $row)
 								{
-									print_r($row);
+									$res = $this->sendReward($row['tg_ref_id'] , $reward[$row['tg_player_reward']] , $sku[$row['tg_player_reward']] , $result);
+									if($res)
+									{
+										if($res->ResultCode != 1)
+										{	
+											$response['dr_user_id'] = $row['tg_player_user_id'];
+											$response['dr_refrence'] = $row['tg_ref_id'];
+											$response['dr_SkuCode'] = $res->TransferRecord->SkuCode;
+											$response['dr_CommissionApplied'] = $res->TransferRecord->CommissionApplied;
+											$response['dr_ProcessingState']=	$res->TransferRecord->ProcessingState;
+											$response['dr_AccountNumber'] = $res->TransferRecord->AccountNumber;
+											$response['dr_ResultCode']= $res->ResultCode;
+											$response['dr_ErrorCodes_Code'] = $res->ErrorCodes[0]->Code;
+											$response['dr_ErrorCodes_Context'] = $res->ErrorCodes[0]->Context;
+											$this->db->insert('tbl_ding_response' , $response);
+
+											$gratification['tg_response'] = "Failed";
+											$gratification['tg_error_code'] = $res->ResultCode;
+											$gratification['tg_error_message']= $res->ErrorCodes[0]->Code;
+											$this->db->where('tg_ref_id' , $row['tg_ref_id']);
+											$this->db->update('tbl_talktime_gratification' , $gratification);
+										}
+										else
+										{
+											$response['dr_user_id'] = $row['tg_player_user_id'];
+											$response['dr_refrence'] = $row['tg_ref_id'] ; 
+											$response['dr_TransferRef'] = $res->TransferRecord->TransferId->TransferRef;
+											$response['dr_DistributorRef']= $res->TransferRecord->TransferId->DistributorRef;
+											$response['dr_SkuCode'] = $res->TransferRecord->SkuCode;
+											$response['dr_CustomerFee'] = $res->TransferRecord->Price->CustomerFee;
+											$response['dr_DistributorFee'] = $res->TransferRecord->Price->DistributorFee;
+											$response['dr_ReceiveValue']= $res->TransferRecord->Price->ReceiveValue;
+											$response['dr_ReceiveCurrencyIso'] = $res->TransferRecord->Price->ReceiveCurrencyIso;
+											$response['dr_ReceiveValueExcludingTax'] = $res->TransferRecord->Price->ReceiveValueExcludingTax;
+											$response['dr_TaxRate'] = $res->TransferRecord->Price->TaxRate;
+											$response['dr_SendValue'] = $res->TransferRecord->Price->SendValue;
+											$response['dr_SendCurrencyIso'] = $res->TransferRecord->Price->SendCurrencyIso;
+											$response['dr_CommissionApplied'] = $res->TransferRecord->CommissionApplied;
+											$response['dr_StartedUtc'] = $res->TransferRecord->StartedUtc;
+											$response['dr_CompletedUtc'] = $res->TransferRecord->CompletedUtc;
+											$response['dr_ProcessingState'] = $res->TransferRecord->ProcessingState;
+											$response['dr_AccountNumber'] = $res->TransferRecord->AccountNumber;
+											$response['dr_ResultCode'] = $res->ResultCode;
+											$this->db->insert('tbl_ding_response' , $response);
+
+
+											$gratification['tg_response'] = "Success";
+											$gratification['tg_error_code'] = $res->ResultCode;
+											$gratification['tg_is_gratify'] =1;
+											$this->db->where('tg_ref_id' , $row['tg_ref_id']);
+											$this->db->update('tbl_talktime_gratification' , $gratification);
+
+											$player2['player_reward_rank'] 	=	$row['tg_player_rank'];
+											$player2['player_reward_prize']	    = 	$row['tg_player_reward'];
+											$this->db->where('player_id' , $row['tg_player_id']);
+											$this->db->update('tbl_tournaments_players' , $player2);
+
+										}
+									}
 								}
+
 							}
 						}
 					}
@@ -3283,9 +3353,7 @@ public function liveTournamentsResults(){
 
 	function generateTokenForGratification()
 	{
-
 			$curl = curl_init();
-
 			curl_setopt_array($curl, array(
 			CURLOPT_URL => 'https://idp.ding.com/connect/token',
 			CURLOPT_RETURNTRANSFER => true,
@@ -3317,5 +3385,51 @@ public function liveTournamentsResults(){
 			}
 	}
 
+	function sendReward($ref , $reward , $sku , $result)
+	{
+		// echo $sku;
+		// echo $reward;
+		// die();
+			$curl = curl_init();
+
+			curl_setopt_array($curl, array(
+			CURLOPT_URL => 'https://api.dingconnect.com/api/V1/SendTransfer',
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => '',
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 0,
+			CURLOPT_FOLLOWLOCATION => true,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => 'POST',
+			CURLOPT_POSTFIELDS =>'{
+				"SkuCode":"'.$sku.'",
+				"SendValue" :"'.$reward.'",
+				"SendCurrencyIso" :"USD",
+				"AccountNumber" : "950000000000",
+				"DistributorRef" : "'.$ref.'",
+				"ValidateOnly" : false
+			}',
+			CURLOPT_HTTPHEADER => array(
+				'Content-Type: application/json',
+				'Authorization: Bearer '.$result->access_token,
+				'Cookie: incap_ses_1523_1694192=EEGwXUn5uTFQHgFVfMgiFYc6DmIAAAAA11+kSXc5ZiQhnLCs4BpTqg==; incap_ses_218_1694192=2UHYFtnM6RbB0PBc5n0GA08eDmIAAAAAOtr495Q/cG3BtFl4Un5OpQ==; nlbi_1694192=lM1LO85vxwc0ovorGYVdWQAAAADeJcY1ZD0CALulv+4AJsJI; visid_incap_1694192=Yguxt22OQnCsSt6TPU/yDcoaDmIAAAAAQUIPAAAAAACNS8GHFGzCtdngsQ9Ty4Um'
+			),
+			));
+
+			$response = curl_exec($curl);
+
+			curl_close($curl);
+			// echo "<pre>";
+			$result =json_decode($response);
+			// print_r($result);
+			// die();
+			if($result)
+			{
+				return $result;
+			}
+			else
+				return false;
+
+	}
 // END 
 }
