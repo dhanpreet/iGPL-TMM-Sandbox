@@ -807,7 +807,13 @@ class Site_model extends CI_Model {
 		$this->db->where('tg_t_id' , $id);
 		return $this->db->get()->result_array();
 	}
-	
+	function getSkuCode()
+	{
+		$this->db->select('*', FALSE);
+		$this->db->from('tbl_talktime_reward');
+		$result = $this->db->get()->result_array();
+		return $result;
+	}
 	
 	
 }
