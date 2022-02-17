@@ -78,8 +78,17 @@ class Admin_model extends CI_Model {
         return $this->db->get()->row_array();
 	}
 	
+	// function getGamesList($id=''){
+	// 	$this->db->select("*", FALSE);
+    //     $this->db->from('games'); 
+	// 	if(!empty($id))		
+	// 		$this->db->where('id', $id);
+	// 	$this->db->order_by('Name', 'ASC');
+    //     return $this->db->get()->result_array();
+	// }
+
 	function getGamesList($id=''){
-		$this->db->select("*", FALSE);
+		$this->db->select("id, Name, portalCategory,portalCategoryId, Category, portalPublished, gid", FALSE);
         $this->db->from('games'); 
 		if(!empty($id))		
 			$this->db->where('id', $id);
