@@ -145,6 +145,8 @@ class Admin_model extends CI_Model {
 	}
 	public function addNewTournaments($data)
 	{
+		$startTime = date('Y-m-d H:i:s', strtotime($data['tournament_start_date'].$data['tournament_start_time']));
+		$endTime =  date('Y-m-d H:i:s', strtotime($data['tournament_end_date'].$data['tournament_end_time'].':59'));
 		$data2=array(
 			'tournament_name'=>$data['tournament_name'],
 			'tournament_game_id'=>$data['tournament_game_id'],
@@ -158,15 +160,24 @@ class Admin_model extends CI_Model {
 			'tournament_end_date'=>$data['tournament_end_date'],
 			'tournament_start_time'=>$data['tournament_start_time'],
 			'tournament_end_time'=>$data['tournament_end_time'],
+			'tournament_start_timestamp'=>	$startTime,
+			'tournament_end_timestamp'=>	$endTime,
 			'tournament_category'=>$data['tournament_category'],
 			'tournament_category_id'=>$data['tournament_category_id'],
 			'tournament_status'=>$data['tournament_status'],
 			'tournament_added_on'=>$data['tournament_added_on'],
 			'tournament_updated_on'=>$data['tournament_updated_on'],
-			// 'tournament_name'=>$data['tournament_name'],
-			// 'tournament_name'=>$data['tournament_name'],
-			// 'tournament_name'=>$data['tournament_name'],
-			// 'tournament_name'=>$data['tournament_name'],
+			'tournament_reward_type'=>$data['tournament_reward_type'][0],
+			'tournament_fee'=>$data['tournament_fee'][0],
+			'tournament_prize_1'=>$data['tournament_prize_1'][0],
+			'tournament_prize_2'=>$data['tournament_prize_2'][0],
+			'tournament_prize_3'=>$data['tournament_prize_3'][0],
+			'tournament_prize_4'=>$data['tournament_prize_4'][0],
+			'tournament_prize_5'=>$data['tournament_prize_5'][0],
+			'tournament_prize_6'=>$data['tournament_prize_6'][0],
+			'tournament_prize_7'=>$data['tournament_prize_7'][0],
+			'tournament_prize_8'=>$data['tournament_prize_8'][0],
+			'tournament_prize_9'=>$data['tournament_prize_9'][0]
 		);
 		$result=$this->db->insert('tbl_tournaments', $data2);
 		if(!$result)
