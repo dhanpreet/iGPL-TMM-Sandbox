@@ -82,7 +82,13 @@
                                     </li> 
                                 </ul>
                             </li>
-							
+							<li>
+                                <a href="<?php echo site_url('Admin/Gratification'); ?>">
+                                    <i data-feather="file"></i>
+                                    <span> Gratification Report </span>
+                                </a>
+                            </li>
+
 							<li>
                                 <a href="<?php echo site_url('Admin/SpinWheel') ?>">
                                     <i data-feather="loader"></i>
