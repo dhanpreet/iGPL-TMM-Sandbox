@@ -144,7 +144,10 @@ $route['terms-of-use'] = 'site/terms';
 $route['TournamentsList']='site/tournamentsList';
 $route['vipList']='site/vipList';
 
+// Gratification Section
 
+$route['Admin/Gratification'] = 'Admin_Gratification/getGratificationReport';
+$route['Admin/Gratification/Leaderboard/(:any)'] = 'Admin_Gratification/getExpiredTournament/$1';
 /*
 | -------------------------------------------------------------------------
 | Sample REST API /Routes
