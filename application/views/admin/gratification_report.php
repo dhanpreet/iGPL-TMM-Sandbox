@@ -22,6 +22,7 @@
 	<link href="<?php echo base_url() ?>assets/admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?php echo base_url() ?>assets/admin/css/icons.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?php echo base_url() ?>assets/admin/css/app.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	<style>
 		.form-control{
 			border : 1px solid #b3b8d6 !important;
@@ -87,6 +88,47 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
+
+                                    <div class="row">
+											<div class="col-6">
+												<h4 class="header-title mt-0 mb-1">
+												
+												<?php if($filter == 'customDates'){ ?>
+													Custom Filters <span class="text-danger"> <?php echo date('d/M/y', strtotime($startDate)); ?> </span> To <span class="text-danger"><?php echo date('d/M/y', strtotime($endDate)); ?> </span>
+												<?php } ?>
+												
+												
+												</h4>
+											</div>
+											
+											<div class="col-md-6 float-md-right" style="float:right;"> 
+											<form id="searchForm" action="<?php echo site_url('Admin/GratificationFilter'); ?>" method="post"> 
+												<div class="form-group row" style=" text-align:right; ">
+													<label class="col-md-2 label-control text-bold-700" ><h4><b>&nbsp; </b></h4></label>
+													<div class="col-md-8" style="padding: 0 !important;"> 
+														<select class="form-control" name="search" id="search">
+															<option value='' <?php if(@$filter == '') { echo "selected"; } ?>>Choose Filter</option>
+															<option value='1' <?php if(@$filter == '1') { echo "selected"; } ?>>Yesterday</option>
+															<option value='7' <?php if(@$filter == '7') { echo "selected"; } ?>>Last 7 days</option>
+															<option value='15' <?php if(@$filter == '15') { echo "selected"; } ?>>Last 15 days</option>
+															<option value='30' <?php if(@$filter == '30') { echo "selected"; } ?>>Last 30 days</option>
+															<option value='month' <?php if(@$filter == 'month') { echo "selected"; } ?>>MTD - Month Till Date</option>										
+															<option value='all' <?php if(@$filter == 'all') { echo "selected"; } ?>>All Listed Tournaments</option>										
+															<option value='custom' <?php if(@$filter == 'custom') { echo "selected"; } ?>>Custom Dates</option>										
+														</select>
+													</div>
+													<div class="col-md-2 text-center" style="padding: 0 !important;"> 
+														<button type="submit" name="Go" id="go-btn" class="btn btn-primary"><i data-feather="search"></i></button>
+													</div>
+												
+												</div>
+												
+											</form>
+											</div>
+											
+										</div>
+
+
                                        <div class="row">
 											<div class="col-6">
 												<h4 class="header-title mt-0 mb-1">All Tournament</h4>
@@ -222,7 +264,56 @@
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 	
-	
+	<div class="modal fade" id="customDates" tabindex="-1" aria-labelledby="customDatesLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header bd-primary">
+			<h5 class="modal-title" id="customDatesLabel">Filter Data For Custom Dates</h5>
+			</div>
+		  <form action="<?php echo site_url('Admin/GratificationDateFilter'); ?>" method="post"> 
+		  <div class="modal-body">
+			
+				<div class="form-group row">
+					<label class="col-md-12 label-control text-bold-700" ><h6>Please choose a date range</h6></label>
+				</div>	
+				
+				<div class="form-group row">
+					<label class="col-md-4 label-control text-bold-700" ><h6>Start Date</h6></label>
+					<div class="col-md-8" style="padding: 0 !important;"> 
+						<input type="date" class="form-control" name="startDate" id="startDate">
+					</div>										
+				</div>	
+				
+				<div class="form-group row">
+					<label class="col-md-4 label-control text-bold-700" ><h6>End Date </h6></label>
+					<div class="col-md-8" style="padding: 0 !important;"> 
+						<input type="date" class="form-control" name="endDate" id="endDate">
+					</div>										
+				</div>												
+			
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button type="submit" class="btn btn-primary">Search</button>
+		  </div>
+		  </form>
+		</div>
+	  </div>
+	</div>
+        <script>
+		$(document).ready( function() {
+			$('#search').change( function() {
+				var filter = $(this).val();
+				if(filter == 'custom'){
+					$("#go-btn").attr('disabled','true');
+					$("#customDates").modal('show');
+				}  else {
+					$("#customDates").hide('show');
+					$("#go-btn").removeAttr('disabled');
+				} 
+			});
+		});
+		</script>
       
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
@@ -257,7 +348,7 @@
 
         <!-- App js -->
         <script src="<?php echo base_url() ?>assets/admin/js/app.min.js"></script>
-
+        <script src="<?php echo base_url() ?>assets/admin/js/app.min.js"></script>
 		<script>
 		$('#myDataTable').dataTable( {
 			"pageLength": 50

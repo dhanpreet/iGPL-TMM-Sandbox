@@ -29,12 +29,45 @@ class Admin_Gratification_model extends CI_Model {
 		$this->db->where('tg_t_id' , $id);
 		return $this->db->get()->result_array();
 	}
-	function getExpiredTournaments()
+	function getExpiredTournaments($filter, $stat_month = '', $stat_year= '')
 	{
 		$this->db->select('*', FALSE);
 		$this->db->from('tbl_tournaments');
 		$this->db->where('tournament_reward_type', 3);
 		$this->db->where('tournament_status' , 3);
+		if($filter == '1'){
+			$date = date('Y-m-d',strtotime("-1 days"));
+			$this->db->where('DATE(tournament_start_date)', DATE($date));		
+		} else if($filter == '7'){
+			$startDate =  date('Y-m-d', strtotime('-7 days'));
+			$endDate = date('Y-m-d', strtotime('-1 days'));
+			$this->db->where("DATE(tournament_start_date) BETWEEN DATE('$startDate') AND  DATE('$endDate') ");	
+		} else if($filter == '15'){
+			$startDate =  date('Y-m-d', strtotime('-15 days'));
+			$endDate = date('Y-m-d', strtotime('-1 days'));
+			$this->db->where("DATE(tournament_start_date) BETWEEN DATE('$startDate') AND  DATE('$endDate') ");	
+		} else if($filter == '30'){
+			$startDate =  date('Y-m-d', strtotime('-30 days'));
+			$endDate = date('Y-m-d', strtotime('-1 days'));
+			$this->db->where("DATE(tournament_start_date) BETWEEN DATE('$startDate') AND DATE('$endDate') ");	
+		} else if($filter == 'month'){			
+			$this->db->where(" '$stat_year' = year(tournament_start_date)");		
+			$this->db->where(" '$stat_month' = month(tournament_start_date)"); 
+		} else if($filter == 'all'){
+			$today = date('Y-m-d');
+			$this->db->where("tournament_start_date <= '$today' ");
+		}
+		$this->db->order_by("tournament_id", "desc");
+		return $this->db->get()->result_array();
+	}
+
+	function getExpiredTournamentsDateFilter($startDate, $endDate)
+	{
+		$this->db->select('*', FALSE);
+		$this->db->from('tbl_tournaments');
+		$this->db->where('tournament_reward_type', 3);
+		$this->db->where('tournament_status' , 3);
+		$this->db->where("DATE(tournament_start_date) BETWEEN DATE('$startDate') AND DATE('$endDate') ");	
 		$this->db->order_by("tournament_id", "desc");
 		return $this->db->get()->result_array();
 	}

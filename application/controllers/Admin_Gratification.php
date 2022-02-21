@@ -349,10 +349,34 @@ class Admin_Gratification extends CI_Controller {
 
         public function getGratificationReport()
         {
-            $data['list'] = $this->ADMINDBAPI->getExpiredTournaments();
+            $data['list'] = $this->ADMINDBAPI->getExpiredTournaments($filter='all');
+            $data['filter']="all";
             $this->load->view('admin/gratification_report' , $data);
         }
-
+        public function getGratificationFilterReport()
+        {
+            $filter = $this->input->post('search');
+            if($filter == 'month'){
+                $stat_month = date('m');
+                $stat_year = date('Y');		
+                $data['list'] = $this->ADMINDBAPI->getExpiredTournaments($filter, $stat_month , $stat_year );		
+            }
+            else
+                $data['list'] = $this->ADMINDBAPI->getExpiredTournaments($filter );
+            $data['filter']=$filter;
+            $this->load->view('admin/gratification_report' , $data);
+        }
+        public function getGratificationDateFilterReport()
+        {
+            $startDate = @$_POST['startDate'];
+			$endDate = @$_POST['endDate'];
+            
+            $data['list'] = $this->ADMINDBAPI->getExpiredTournamentsDateFilter($startDate, $endDate );
+            $data['startDate'] = @$startDate;
+			$data['endDate'] = @$endDate;
+			$data['filter'] = 'customDates';
+            $this->load->view('admin/gratification_report' , $data);
+        }
         public function getExpiredTournament($id='')
         {
             $t_id = base64_decode($id);

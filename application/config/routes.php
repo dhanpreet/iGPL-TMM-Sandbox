@@ -147,6 +147,8 @@ $route['vipList']='site/vipList';
 // Gratification Section
 
 $route['Admin/Gratification'] = 'Admin_Gratification/getGratificationReport';
+$route['Admin/GratificationFilter'] = 'Admin_Gratification/getGratificationFilterReport';
+$route['Admin/GratificationDateFilter'] = 'Admin_Gratification/getGratificationDateFilterReport';
 $route['Admin/Gratification/Leaderboard/(:any)'] = 'Admin_Gratification/getExpiredTournament/$1';
 /*
 | -------------------------------------------------------------------------

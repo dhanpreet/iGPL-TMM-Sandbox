@@ -13,20 +13,6 @@
                                 </a>
                             </li>
                            
-                            <!-- <li>
-                                <a href="javascript: void(0);">
-                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                    <span> Country </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="<?php echo site_url('Admin/ManageCountry')  ?>">Manage Country </a>
-                                    </li>
-									  
-                                </ul>
-                            </li> -->
 
                             <li>
                                 <a href="javascript: void(0);">
@@ -83,7 +69,7 @@
                                 </ul>
                             </li>
 							<li>
-                                <a href="<?php echo site_url('Admin/Gratification'); ?>">
+                                <a href="<?php echo site_url('Admin/Gratification') ?>">
                                     <i data-feather="file"></i>
                                     <span> Gratification Report </span>
                                 </a>
